@@ -30,6 +30,11 @@ public class MegaStaff extends JavaPlugin implements Listener {
 	public ArrayList<String> staffchat = new ArrayList<String>();
 	public ArrayList<String> frozen = new ArrayList<String>();
 	
+	/*
+	 * (non-Javadoc)
+	 * @see org.bukkit.plugin.java.JavaPlugin#onEnable()
+	 */
+	
 	@Override
 	public void onEnable(){
 		
