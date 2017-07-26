@@ -59,9 +59,7 @@ public class MegaStaff extends JavaPlugin implements Listener {
 		getCommand("clearchat").setExecutor(new ClearChatCommand(new Manager(this)));
 		getCommand("vanish").setExecutor(new VanishCommand(new Manager(this)));
 	}
-	
-	// Sexy best of a plugin
-	
+		
 	@Override
 	public void onDisable(){
 	}
