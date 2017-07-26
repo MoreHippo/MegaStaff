@@ -1,0 +1,49 @@
+# All of the messages for MegaStaff
+# Supports all Minecraft color codes
+# Double Arrow thing. »
+
+# %player% = Player issuing the command
+# %target% = Player being affected
+#
+#
+
+prefix: "&2[&aMegaStaff&2] "
+staffChatPrefix: "&2[&aStaffChat&2] "
+
+##################
+# Basic Messages #
+##################
+
+noPermission: "&cYou do not have permission to execute this command."
+playerNotFound: "&cThe player you requested was not able to be retrieved."
+specifyPlayer: "&cPlease specify a player!"
+mustBeAPlayer: "&cYou must be a player to execute this command!"
+
+###################
+# Frozen Messages.#
+###################
+
+frozenPlayer: "&aYou have froze %target%!"
+onFrozenPlayerMove: "&4&lYou have been frozen! Join our Discord at xxx"
+beenFrozen: "&cYou have been frozen by %player%!"
+unfrozenPlayer: "&aYou have un-frozen %target%!"
+beenUnfrozen: "&aYou have been un-frozen by %player%!"
+banMessageOnlogOff: "&a%player% has been banned for logging off while frozen!"
+
+##########################
+# Chat Control Messages. #
+##########################
+
+muteChat: "&cThe chat has been muted by %player%"
+chatMutedMessage: "&cYou can not speak while the chat is muted."
+clearChat: "&cThe chat has been cleared by %player%"
+
+####################
+# Staff Functions. #
+####################
+
+staffLogin: "&c%player% &ejust logged on and was put directly into vanish."
+staffLeave: "&c%player% &ejust logged off while in vanish."
+silentChestOpen: "&eYou opened the chest silently"
+vanishEnabled: "&eVanish has been &2enabled"
+vanishDisabled: "&eVanish has been &cdisabled"

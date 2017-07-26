@@ -1,0 +1,35 @@
+# Config.yml for MegaStaff
+# Authors: Dreadmore & HippoPlayz
+# You will be able to toggle extra functions or turn off functions that you don't need here.
+
+####################
+# Permission Nodes.#
+####################
+
+# Lets the individual with the permission run all basic commands like clearchat, mutechat etc.
+basicStaffPermission: "megastaff.staff"
+
+letSeePlayerIP: "megastaff.staff.seeip"
+exemptToClearChat: "megastaff.staff.exemptToClearChat"
+
+# Lets the individual with the permission run reload and other things.
+# Also only other people with this permission can see other admin's IP Addresses.  
+
+adminStaffPermission: "megastaff.staff.admin"
+
+
+####################
+# Frozen functions.#
+####################
+
+displayGUIWhenFrozen: true
+guiName: "&cYou have been frozen!"
+letPlayerLookAroundWhileFrozen: true
+
+###################
+# Staff Functions.#
+###################
+
+silentChestOpen: true
+putInVanishOnLogin: true
+ 

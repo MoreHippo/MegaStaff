@@ -1,0 +1,17 @@
+name: MegaStaff
+version: 1.0
+main: com.morehippo.megastaff.MegaStaff
+description: MegaStaff plugin
+authors: [Dreadmore, HippoPlayz]
+
+commands:
+    freeze:
+        usage: /<command>
+        description: Freeze.
+    clearchat:
+        usage: /<command>
+        description: Clears chat.
+    vanish:
+        usage: /<command>
+        description: Puts you into vanish.
+        aliases: [v, van, staffmode]
