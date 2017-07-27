@@ -63,6 +63,8 @@ public class MegaStaff extends JavaPlugin implements Listener {
 		getCommand("vanish").setExecutor(new VanishCommand(new Manager(this)));
 		getCommand("staffchat").setExecutor(new StaffChatCommand(new Manager(this)));
 	}
+	
+	// Hello this has worked
 		
 	@Override
 	public void onDisable(){
