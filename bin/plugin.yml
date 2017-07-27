@@ -15,3 +15,7 @@ commands:
         usage: /<command>
         description: Puts you into vanish.
         aliases: [v, van, staffmode]
+    staffchat:
+        usage: /<command>
+        description: Puts you into staffchat.
+        aliases: [sc]

@@ -7,6 +7,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
@@ -36,6 +37,10 @@ public class Manager implements Listener {
 		return ChatColor.translateAlternateColorCodes('&', plugin.messages.getString("prefix"));
 	}
 
+	public String getStaffChatPrefix() {
+		return ChatColor.translateAlternateColorCodes('&', plugin.messages.getString("staffChatPrefix"));
+	}
+	
 	public ArrayList<String> getFrozen() {
 		return plugin.frozen;
 	}
@@ -75,7 +80,7 @@ public class Manager implements Listener {
 		if (!b) {
 			if (plugin.vanish.contains(player)) {
 				plugin.vanish.remove(player);
-				player.sendMessage(getPrefix() + getMessage("vanishDisabled"));
+				player.sendMessage(getMessage("vanishDisabled"));
 				for (Player online : Bukkit.getOnlinePlayers()) {
 					online.showPlayer(player);
 
@@ -121,6 +126,15 @@ public class Manager implements Listener {
 
 	}
 
+	public void noPermission(CommandSender sender) {
+		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getMessage("noPermission")));
+	}
+	
+	public void notAPlayer(CommandSender sender) {
+		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', getMessage("mustBeAPlayer")));
+	}
+	
+	
 	public void openChestVanished(Block block, Player player) {
 		Chest chest = (Chest) block.getState();
 		Inventory inv = Bukkit.getServer().createInventory(player, chest.getInventory().getSize());

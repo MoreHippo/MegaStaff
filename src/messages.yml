@@ -4,7 +4,8 @@
 
 # %player% = Player issuing the command
 # %target% = Player being affected
-#
+# %message% = message being sent by the player.
+# These placeholders are only avaliable on messages that they are on as examples.
 #
 
 prefix: "&2[&aMegaStaff&2] "
@@ -44,6 +45,9 @@ clearChat: "&cThe chat has been cleared by %player%"
 
 staffLogin: "&c%player% &ejust logged on and was put directly into vanish."
 staffLeave: "&c%player% &ejust logged off while in vanish."
+staffChatEnabled: "&eStaff-Chat &2Enabled."
+staffChatDisabled: "&eStaff-Chat &cDisabled."
+staffChatFormat: "%player% &e» &l%message%"
 silentChestOpen: "&eYou opened the chest silently"
 vanishEnabled: "&eVanish has been &2enabled"
 vanishDisabled: "&eVanish has been &cdisabled"

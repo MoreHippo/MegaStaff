@@ -16,8 +16,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import com.morehippo.commands.ClearChatCommand;
 import com.morehippo.commands.FreezeCommand;
+import com.morehippo.commands.StaffChatCommand;
 import com.morehippo.commands.VanishCommand;
 import com.morehippo.listeners.FreezeListeners;
+import com.morehippo.listeners.StaffChatListeners;
 import com.morehippo.listeners.VanishListener;
 
 public class MegaStaff extends JavaPlugin implements Listener {
@@ -52,12 +54,14 @@ public class MegaStaff extends JavaPlugin implements Listener {
 		getServer().getPluginManager().registerEvents(new Manager(this), this);
 		getServer().getPluginManager().registerEvents(new FreezeListeners(new Manager(this)), this);
 		getServer().getPluginManager().registerEvents(new VanishListener(new Manager(this)), this);
+		getServer().getPluginManager().registerEvents(new StaffChatListeners(new Manager(this)), this);
 		
 		// Commands
 		
 		getCommand("freeze").setExecutor(new FreezeCommand(new Manager(this)));
 		getCommand("clearchat").setExecutor(new ClearChatCommand(new Manager(this)));
 		getCommand("vanish").setExecutor(new VanishCommand(new Manager(this)));
+		getCommand("staffchat").setExecutor(new StaffChatCommand(new Manager(this)));
 	}
 		
 	@Override
