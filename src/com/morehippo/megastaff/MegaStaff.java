@@ -5,6 +5,7 @@ import com.morehippo.commands.FreezeCommand;
 import com.morehippo.commands.StaffChatCommand;
 import com.morehippo.commands.VanishCommand;
 import com.morehippo.listeners.FreezeListeners;
+import com.morehippo.listeners.SilentChest;
 import com.morehippo.listeners.StaffChatListeners;
 import com.morehippo.listeners.VanishListener;
 import org.anjocaido.groupmanager.GroupManager;
@@ -57,6 +58,7 @@ public class MegaStaff extends JavaPlugin implements Listener {
 		getServer().getPluginManager().registerEvents(new FreezeListeners(new Manager(this)), this);
 		getServer().getPluginManager().registerEvents(new VanishListener(new Manager(this)), this);
 		getServer().getPluginManager().registerEvents(new StaffChatListeners(new Manager(this)), this);
+		getServer().getPluginManager().registerEvents(new SilentChest(new Manager(this)), this);
 		
 		// Commands
 		
@@ -65,9 +67,7 @@ public class MegaStaff extends JavaPlugin implements Listener {
 		getCommand("vanish").setExecutor(new VanishCommand(new Manager(this)));
 		getCommand("staffchat").setExecutor(new StaffChatCommand(new Manager(this)));
 	}
-	
-	// Hello this has worked
-		
+
 	@Override
 	public void onDisable(){
 	}
