@@ -1,6 +1,6 @@
 # All of the messages for MegaStaff
 # Supports all Minecraft color codes
-# Double Arrow thing. »
+# Double Arrow thing. ï¿½
 
 # %player% = Player issuing the command
 # %target% = Player being affected
@@ -47,7 +47,7 @@ staffLogin: "&c%player% &ejust logged on and was put directly into vanish."
 staffLeave: "&c%player% &ejust logged off while in vanish."
 staffChatEnabled: "&eStaff-Chat &2Enabled."
 staffChatDisabled: "&eStaff-Chat &cDisabled."
-staffChatFormat: "%player% &e» &l%message%"
+staffChatFormat: "%prefix% %player% &e: &l%message%"
 silentChestOpen: "&eYou opened the chest silently"
 vanishEnabled: "&eVanish has been &2enabled"
 vanishDisabled: "&eVanish has been &cdisabled"

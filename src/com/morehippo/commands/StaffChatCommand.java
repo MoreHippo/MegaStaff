@@ -1,17 +1,13 @@
 package com.morehippo.commands;
 
+import com.morehippo.megastaff.Manager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.morehippo.megastaff.Manager;
-
-import net.md_5.bungee.api.ChatColor;
-
 public class StaffChatCommand implements CommandExecutor {
-
-	Manager manager;
+	private Manager manager;
 	
 	public StaffChatCommand(Manager manager) {
 		this.manager = manager;
@@ -21,20 +17,20 @@ public class StaffChatCommand implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("staffchat")) {
 			if (sender instanceof Player){
+                Player player = (Player) sender;
 				if (sender.hasPermission(manager.getConfig().getString("basicStaffPermission"))
 						|| sender.hasPermission(manager.getConfig().getString("adminStaffPermission"))) {
-					Player player = (Player) sender;
 					
 					if(manager.getInStaffChatlist().contains(player.getName())) {
 						manager.getInStaffChatlist().remove(player.getName());
-						player.sendMessage(ChatColor.translateAlternateColorCodes('&', manager.getMessage("staffChatDisabled")));
+						player.sendMessage(manager.getMessage("staffChatDisabled"));
 						return true;
 					} 
 					
 					if(!manager.getInStaffChatlist().contains(player.getName())) {
 						manager.getInStaffChatlist().add(player.getName());
 						
-						player.sendMessage(ChatColor.translateAlternateColorCodes('&', manager.getMessage("staffChatEnabled")));
+						player.sendMessage(manager.getMessage("staffChatEnabled"));
 						return true;
 					}
 					

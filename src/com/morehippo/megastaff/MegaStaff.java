@@ -1,19 +1,5 @@
 package com.morehippo.megastaff;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.bukkit.plugin.java.JavaPlugin;
-
 import com.morehippo.commands.ClearChatCommand;
 import com.morehippo.commands.FreezeCommand;
 import com.morehippo.commands.StaffChatCommand;
@@ -21,6 +7,18 @@ import com.morehippo.commands.VanishCommand;
 import com.morehippo.listeners.FreezeListeners;
 import com.morehippo.listeners.StaffChatListeners;
 import com.morehippo.listeners.VanishListener;
+import org.anjocaido.groupmanager.GroupManager;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.logging.Level;
 
 public class MegaStaff extends JavaPlugin implements Listener {
 	public File cfile;
@@ -31,6 +29,8 @@ public class MegaStaff extends JavaPlugin implements Listener {
 	public ArrayList<Player> vanish = new ArrayList<Player>();
 	public ArrayList<String> staffchat = new ArrayList<String>();
 	public ArrayList<String> frozen = new ArrayList<String>();
+
+	public GroupManager groupManager;
 	
 	@Override
 	public void onEnable(){
@@ -44,6 +44,8 @@ public class MegaStaff extends JavaPlugin implements Listener {
 		if (!messageFile.exists()){
 			saveDefaultMessages();
 		}
+
+		groupManagerCheck();
 		
 		config = getConfig();
 		
@@ -114,7 +116,18 @@ public class MegaStaff extends JavaPlugin implements Listener {
 	    if (!messageFile.exists()) {            
 	         saveResource("messages.yml", false);
 	     }
-	}	
+	}
+
+	private void groupManagerCheck(){
+		final PluginManager pluginManager = getServer().getPluginManager();
+		final Plugin GMplugin = pluginManager.getPlugin("GroupManager");
+
+		if (GMplugin != null && GMplugin.isEnabled())
+		{
+			groupManager = (GroupManager)GMplugin;
+
+		}
+	}
 	
 	/*public void loadData(){
 		getDataConfig().set("prefix", getDataConfig().get("prefix"));
