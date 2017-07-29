@@ -32,6 +32,8 @@ public class MegaStaff extends JavaPlugin implements Listener {
 	public ArrayList<String> frozen = new ArrayList<String>();
 
 	public GroupManager groupManager;
+
+	//hey
 	
 	@Override
 	public void onEnable(){
