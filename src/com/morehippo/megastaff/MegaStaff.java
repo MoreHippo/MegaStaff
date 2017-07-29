@@ -33,7 +33,7 @@ public class MegaStaff extends JavaPlugin implements Listener {
 
 	public GroupManager groupManager;
 
-	//hey
+	//hey 2
 	
 	@Override
 	public void onEnable(){
